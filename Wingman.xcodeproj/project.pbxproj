@@ -1,0 +1,969 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04523851CC1DC3F7ADF139C2 /* WingmanButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C8D94BB6E4E4B24227BE55 /* WingmanButtonStyles.swift */; };
+		091F91FD58A471E8FFA03582 /* ProfileEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239D0C6A64E7028542A0CBA7 /* ProfileEditorView.swift */; };
+		0E5977E08CEFF1A5C2810C34 /* ChipListField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D98A5842BA46E75864E6D3 /* ChipListField.swift */; };
+		1544B4DD07BA5BD66F48F3A2 /* WingmanCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FA1EE43C05E9D7BD238CC1 /* WingmanCoreTests.swift */; };
+		1857EDC50E6C3469878B2F94 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 3D01AAC7E9478F0969D5A6AD /* PrivacyInfo.xcprivacy */; };
+		1E9952BD86C4BCBD1D36CDCD /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A15FD7D2CDC504BB6947C /* EmptyStateView.swift */; };
+		1FE9D1151A334F0DEE1B92AD /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = BFB03D1602F9A383943E37F9 /* PrivacyInfo.xcprivacy */; };
+		25FBD7C39B13932B6A36D7AC /* WingmanTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BF8015BC173B0BC1808A15 /* WingmanTextEditor.swift */; };
+		28B54835EA0926D21D295A1B /* RelationshipGraphImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009A1E541BD1AFA56E878741 /* RelationshipGraphImport.swift */; };
+		2BE29725AE9D9DE0D46AE073 /* WingmanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60DA1D3328F3FAEDFE04C65 /* WingmanApp.swift */; };
+		2D95E59542F9F2B1C94C4EBD /* ReplySuggestionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC663ADDD1A8269654C03465 /* ReplySuggestionCard.swift */; };
+		345A53409AB489D528DBEC16 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8EEDD69614EF245DAC3D18 /* RootView.swift */; };
+		373A472161A0B71B0F85F47E /* WingmanMessages.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8A63BE4D72259FF3B6A55817 /* WingmanMessages.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		381139A3E39E2E93C792F79D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D31E95A6239404AE79935 /* SettingsView.swift */; };
+		3909315E6AF214301EE27467 /* WingmanTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EF2A44B13583A4B0750439 /* WingmanTypography.swift */; };
+		3BA1B4202FF2CEFF7CFF9AC1 /* WingmanTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EF2A44B13583A4B0750439 /* WingmanTypography.swift */; };
+		3E2466015A52930C3807F329 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D56B3ACD826D3531CE7556 /* AppModel.swift */; };
+		4119F0011BCCF1E25600B5F9 /* WingmanButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C8D94BB6E4E4B24227BE55 /* WingmanButtonStyles.swift */; };
+		44432CFBE757DE481D889C13 /* CardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A10885587EE250E080FF9D0 /* CardStyle.swift */; };
+		483E12C1A64ADA7A33A4577A /* MatchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDEC73743AFE19C3818C73B /* MatchEngine.swift */; };
+		484AA17B62813FFEFD7A4497 /* WingmanTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9B593F4C43DAA7816A3908 /* WingmanTextField.swift */; };
+		515B8D8202571BBD22320059 /* WingmanMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932E01A430D6B515C9F38E9 /* WingmanMetrics.swift */; };
+		53D84CD963274E616BD0902E /* ReplyComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6D59858989EA301ADCAC /* ReplyComposer.swift */; };
+		5F1E1A7E6943151133C51FD7 /* WingmanMeshBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612072C87746C621A1252456 /* WingmanMeshBackground.swift */; };
+		690ECA091BAD21788746FABC /* WingmanMeshBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612072C87746C621A1252456 /* WingmanMeshBackground.swift */; };
+		69325ECC449A214BBAD4778C /* WingmanCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6CE7E1DDB41D2956FC6333 /* WingmanCore.framework */; };
+		74C8EA91744768C507D61EDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E55DCE31FC792949D64575A3 /* Assets.xcassets */; };
+		78D600AF922509FE00BA42C1 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47FF96FE52D3F38B915F32D /* Models.swift */; };
+		804D825DC83D543CE3D4FBEC /* WingmanTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9B593F4C43DAA7816A3908 /* WingmanTextField.swift */; };
+		83ADBFC9178CEB5A1FD20928 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F92EEE5C5C92EEF0EFCE98BF /* PrivacyInfo.xcprivacy */; };
+		85220144DBCCDD048F800433 /* MemoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737BE6091DB8463D3B09835 /* MemoriesView.swift */; };
+		85ABB51B2B0C327BDF4654A2 /* ReplyAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A85C32A96712A71F5A0A67 /* ReplyAssistant.swift */; };
+		8802AF66E113CF6B06620DC2 /* WingmanCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FB6CE7E1DDB41D2956FC6333 /* WingmanCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8934E9F43B99152F173E0FC0 /* NIMReplyAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1744547DA5E73E9B19EBCB05 /* NIMReplyAssistant.swift */; };
+		918969DCBB6D731DDB049D06 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A15FD7D2CDC504BB6947C /* EmptyStateView.swift */; };
+		95834302392818DA87D5127D /* ChipListField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D98A5842BA46E75864E6D3 /* ChipListField.swift */; };
+		962CA1A8BED2E0D62CDE5BF1 /* MessagesRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11EC21305F67F047DCEF0C6 /* MessagesRootView.swift */; };
+		97DB9EAF6B87AE3204414E3F /* WingmanCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6CE7E1DDB41D2956FC6333 /* WingmanCore.framework */; };
+		986DAAAE3F0F839556BC22BE /* CardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A10885587EE250E080FF9D0 /* CardStyle.swift */; };
+		B3429CF7D30486A012449FBE /* WingmanCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FB6CE7E1DDB41D2956FC6333 /* WingmanCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B549C7E8C28AD05CCEFE4A0E /* MessagePayloadCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BAB49EE6EB5C21FDE214AE /* MessagePayloadCodec.swift */; };
+		C51AB431EAF0B01691A637CF /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CC9ACD54A799243529F5CA /* MessagesViewController.swift */; };
+		C5FB44EEFF5A3543304F2432 /* WingmanPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94046853CBF1751BB1B2609F /* WingmanPalette.swift */; };
+		C65F4D3C22D1C43EFEC5BBB9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFE5081D5CB94234781ACD3 /* HomeView.swift */; };
+		C9C03C535C493AC94D7840A0 /* MessagesExtensionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE605BCCED5E02B556F8CD6 /* MessagesExtensionModel.swift */; };
+		CAE8BCAB3954AB98AA615FC6 /* PrivacyBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F82C3D556726DF3B85D21 /* PrivacyBadge.swift */; };
+		CD0FFC1DBF9E73BB1957F58D /* WingmanPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94046853CBF1751BB1B2609F /* WingmanPalette.swift */; };
+		CD9532E228267F8AEE805E3E /* SharedStateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6766CEFBACB10B9CB2DF2 /* SharedStateStore.swift */; };
+		CE2E8A093DA5F184860112F8 /* WingmanMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932E01A430D6B515C9F38E9 /* WingmanMetrics.swift */; };
+		D47CDB32BF6FE1F856146135 /* WingmanCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6CE7E1DDB41D2956FC6333 /* WingmanCore.framework */; };
+		D9C59AF2C22CB9D72F473656 /* ReplySuggestionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC663ADDD1A8269654C03465 /* ReplySuggestionCard.swift */; };
+		DC9EEDE8D95ACD5C11D3ECA4 /* PrivacyBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F82C3D556726DF3B85D21 /* PrivacyBadge.swift */; };
+		F1E30C1425BD61509688E815 /* ReplyComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6D59858989EA301ADCAC /* ReplyComposer.swift */; };
+		F1E3A652D20E297993F6111A /* NIMClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8763753ABC505EC26C1F2F19 /* NIMClient.swift */; };
+		F280DF1165B633A6E2CF0EF3 /* MeetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D8C5C04E6BB4FC0A50B4B7 /* MeetView.swift */; };
+		FDC60AACB471C0F310EB6946 /* WingmanTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BF8015BC173B0BC1808A15 /* WingmanTextEditor.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		061E663110982963CFF48B4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F76BCDAB37EF5C2857E3DDC0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7BC69115E4A7956735FEF557;
+			remoteInfo = WingmanCore;
+		};
+		65BC89E886206F69C0AE5102 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F76BCDAB37EF5C2857E3DDC0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7BC69115E4A7956735FEF557;
+			remoteInfo = WingmanCore;
+		};
+		6C7EBB17B8EAFC1528C65378 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F76BCDAB37EF5C2857E3DDC0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7BC69115E4A7956735FEF557;
+			remoteInfo = WingmanCore;
+		};
+		8571BC33D4A42165D350AE82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F76BCDAB37EF5C2857E3DDC0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 358338D3AD149B7041FA07AA;
+			remoteInfo = WingmanMessages;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		583F23AC16F27A2FE9BDD18B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8802AF66E113CF6B06620DC2 /* WingmanCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C71B96B50AC03878B0AF7C2A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B3429CF7D30486A012449FBE /* WingmanCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA0CC3692F327B8DA724247E /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				373A472161A0B71B0F85F47E /* WingmanMessages.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		009A1E541BD1AFA56E878741 /* RelationshipGraphImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelationshipGraphImport.swift; sourceTree = "<group>"; };
+		00BAB49EE6EB5C21FDE214AE /* MessagePayloadCodec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePayloadCodec.swift; sourceTree = "<group>"; };
+		035F6D59858989EA301ADCAC /* ReplyComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyComposer.swift; sourceTree = "<group>"; };
+		09D8C5C04E6BB4FC0A50B4B7 /* MeetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetView.swift; sourceTree = "<group>"; };
+		163F82C3D556726DF3B85D21 /* PrivacyBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyBadge.swift; sourceTree = "<group>"; };
+		1744547DA5E73E9B19EBCB05 /* NIMReplyAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIMReplyAssistant.swift; sourceTree = "<group>"; };
+		20A85C32A96712A71F5A0A67 /* ReplyAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyAssistant.swift; sourceTree = "<group>"; };
+		239D0C6A64E7028542A0CBA7 /* ProfileEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditorView.swift; sourceTree = "<group>"; };
+		26EF2A44B13583A4B0750439 /* WingmanTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingmanTypography.swift; sourceTree = "<group>"; };
+		2F8EEDD69614EF245DAC3D18 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		3737BE6091DB8463D3B09835 /* MemoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesView.swift; sourceTree = "<group>"; };
+		3A10885587EE250E080FF9D0 /* CardStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStyle.swift; sourceTree = "<group>"; };
+		3CE605BCCED5E02B556F8CD6 /* MessagesExtensionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesExtensionModel.swift; sourceTree = "<group>"; };
+		3D01AAC7E9478F0969D5A6AD /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		3DFE5081D5CB94234781ACD3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4F9B593F4C43DAA7816A3908 /* WingmanTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingmanTextField.swift; sourceTree = "<group>"; };
+		56D98A5842BA46E75864E6D3 /* ChipListField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipListField.swift; sourceTree = "<group>"; };
+		5C0A15FD7D2CDC504BB6947C /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		612072C87746C621A1252456 /* WingmanMeshBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingmanMeshBackground.swift; sourceTree = "<group>"; };
+		742D31E95A6239404AE79935 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		74CC9ACD54A799243529F5CA /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		86D56B3ACD826D3531CE7556 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		8763753ABC505EC26C1F2F19 /* NIMClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIMClient.swift; sourceTree = "<group>"; };
+		87D994C85C00A252B17D1CAA /* WingmanCoreTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = WingmanCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A63BE4D72259FF3B6A55817 /* WingmanMessages.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = WingmanMessages.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		92FA1EE43C05E9D7BD238CC1 /* WingmanCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingmanCoreTests.swift; sourceTree = "<group>"; };
+		94046853CBF1751BB1B2609F /* WingmanPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingmanPalette.swift; sourceTree = "<group>"; };
+		A11EC21305F67F047DCEF0C6 /* MessagesRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesRootView.swift; sourceTree = "<group>"; };
+		A47FF96FE52D3F38B915F32D /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		B2F6766CEFBACB10B9CB2DF2 /* SharedStateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStateStore.swift; sourceTree = "<group>"; };
+		B932E01A430D6B515C9F38E9 /* WingmanMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingmanMetrics.swift; sourceTree = "<group>"; };
+		BC663ADDD1A8269654C03465 /* ReplySuggestionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplySuggestionCard.swift; sourceTree = "<group>"; };
+		BFB03D1602F9A383943E37F9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		C60DA1D3328F3FAEDFE04C65 /* WingmanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingmanApp.swift; sourceTree = "<group>"; };
+		CBDEC73743AFE19C3818C73B /* MatchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchEngine.swift; sourceTree = "<group>"; };
+		D8BF8015BC173B0BC1808A15 /* WingmanTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingmanTextEditor.swift; sourceTree = "<group>"; };
+		E55DCE31FC792949D64575A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F0C8D94BB6E4E4B24227BE55 /* WingmanButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingmanButtonStyles.swift; sourceTree = "<group>"; };
+		F2FE628C0697A064C96F62AF /* Wingman.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Wingman.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F92EEE5C5C92EEF0EFCE98BF /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		FB6CE7E1DDB41D2956FC6333 /* WingmanCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WingmanCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"TEMP_A8534FF5-7D2A-4B47-995B-41F0CE57EBBE" /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		111E4BE77C58FDF9398EDB3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97DB9EAF6B87AE3204414E3F /* WingmanCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		320ED6DBB63ED5A92780FC72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D47CDB32BF6FE1F856146135 /* WingmanCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83D43BAB00C9EF9CE478B94A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69325ECC449A214BBAD4778C /* WingmanCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		060024F9FA4F3DCEE995D839 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D9761508EABE8D265051C239 /* WingmanApp */,
+				42EA4E45CC45ABDA5468AA10 /* WingmanCore */,
+				6A17BF06DF418C9C3A347E3C /* WingmanMessages */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		14574007E8B5863F188C9E5E /* WingmanDesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				D76AAF0799FEEF158F6C8F6A /* Components */,
+				3A10885587EE250E080FF9D0 /* CardStyle.swift */,
+				F0C8D94BB6E4E4B24227BE55 /* WingmanButtonStyles.swift */,
+				B932E01A430D6B515C9F38E9 /* WingmanMetrics.swift */,
+				94046853CBF1751BB1B2609F /* WingmanPalette.swift */,
+				26EF2A44B13583A4B0750439 /* WingmanTypography.swift */,
+			);
+			path = WingmanDesignSystem;
+			sourceTree = "<group>";
+		};
+		26CD52E9FF76D85178D91D1F = {
+			isa = PBXGroup;
+			children = (
+				5EA61BE12DDA7AE72B66BA8E /* App */,
+				CFC9D9A98FC725F8534BDEC9 /* Tests */,
+				F2560EE63B80D7105A7EDB97 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42EA4E45CC45ABDA5468AA10 /* WingmanCore */ = {
+			isa = PBXGroup;
+			children = (
+				BFB03D1602F9A383943E37F9 /* PrivacyInfo.xcprivacy */,
+			);
+			path = WingmanCore;
+			sourceTree = "<group>";
+		};
+		5EA61BE12DDA7AE72B66BA8E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				060024F9FA4F3DCEE995D839 /* Resources */,
+				7E623727B107B010C483B082 /* Shared */,
+				7950282B8A9C209570B2BFDD /* WingmanApp */,
+				EC22EBBFA8B72FC5AF53E9BC /* WingmanMessages */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		6A17BF06DF418C9C3A347E3C /* WingmanMessages */ = {
+			isa = PBXGroup;
+			children = (
+				3D01AAC7E9478F0969D5A6AD /* PrivacyInfo.xcprivacy */,
+			);
+			path = WingmanMessages;
+			sourceTree = "<group>";
+		};
+		7950282B8A9C209570B2BFDD /* WingmanApp */ = {
+			isa = PBXGroup;
+			children = (
+				86D56B3ACD826D3531CE7556 /* AppModel.swift */,
+				3DFE5081D5CB94234781ACD3 /* HomeView.swift */,
+				09D8C5C04E6BB4FC0A50B4B7 /* MeetView.swift */,
+				3737BE6091DB8463D3B09835 /* MemoriesView.swift */,
+				239D0C6A64E7028542A0CBA7 /* ProfileEditorView.swift */,
+				2F8EEDD69614EF245DAC3D18 /* RootView.swift */,
+				742D31E95A6239404AE79935 /* SettingsView.swift */,
+				C60DA1D3328F3FAEDFE04C65 /* WingmanApp.swift */,
+			);
+			path = WingmanApp;
+			sourceTree = "<group>";
+		};
+		7E623727B107B010C483B082 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				81BD7143ECBC17A3E37E8BEC /* WingmanCore */,
+				14574007E8B5863F188C9E5E /* WingmanDesignSystem */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		81BD7143ECBC17A3E37E8BEC /* WingmanCore */ = {
+			isa = PBXGroup;
+			children = (
+				CBDEC73743AFE19C3818C73B /* MatchEngine.swift */,
+				00BAB49EE6EB5C21FDE214AE /* MessagePayloadCodec.swift */,
+				A47FF96FE52D3F38B915F32D /* Models.swift */,
+				8763753ABC505EC26C1F2F19 /* NIMClient.swift */,
+				1744547DA5E73E9B19EBCB05 /* NIMReplyAssistant.swift */,
+				009A1E541BD1AFA56E878741 /* RelationshipGraphImport.swift */,
+				20A85C32A96712A71F5A0A67 /* ReplyAssistant.swift */,
+				B2F6766CEFBACB10B9CB2DF2 /* SharedStateStore.swift */,
+			);
+			path = WingmanCore;
+			sourceTree = "<group>";
+		};
+		C4DA708FF833A39917ECEFE4 /* WingmanCoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				92FA1EE43C05E9D7BD238CC1 /* WingmanCoreTests.swift */,
+			);
+			path = WingmanCoreTests;
+			sourceTree = "<group>";
+		};
+		CFC9D9A98FC725F8534BDEC9 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				C4DA708FF833A39917ECEFE4 /* WingmanCoreTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		D76AAF0799FEEF158F6C8F6A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				56D98A5842BA46E75864E6D3 /* ChipListField.swift */,
+				5C0A15FD7D2CDC504BB6947C /* EmptyStateView.swift */,
+				163F82C3D556726DF3B85D21 /* PrivacyBadge.swift */,
+				035F6D59858989EA301ADCAC /* ReplyComposer.swift */,
+				BC663ADDD1A8269654C03465 /* ReplySuggestionCard.swift */,
+				612072C87746C621A1252456 /* WingmanMeshBackground.swift */,
+				D8BF8015BC173B0BC1808A15 /* WingmanTextEditor.swift */,
+				4F9B593F4C43DAA7816A3908 /* WingmanTextField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D9761508EABE8D265051C239 /* WingmanApp */ = {
+			isa = PBXGroup;
+			children = (
+				E55DCE31FC792949D64575A3 /* Assets.xcassets */,
+				F92EEE5C5C92EEF0EFCE98BF /* PrivacyInfo.xcprivacy */,
+			);
+			path = WingmanApp;
+			sourceTree = "<group>";
+		};
+		EC22EBBFA8B72FC5AF53E9BC /* WingmanMessages */ = {
+			isa = PBXGroup;
+			children = (
+				3CE605BCCED5E02B556F8CD6 /* MessagesExtensionModel.swift */,
+				A11EC21305F67F047DCEF0C6 /* MessagesRootView.swift */,
+				74CC9ACD54A799243529F5CA /* MessagesViewController.swift */,
+			);
+			path = WingmanMessages;
+			sourceTree = "<group>";
+		};
+		F2560EE63B80D7105A7EDB97 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F2FE628C0697A064C96F62AF /* Wingman.app */,
+				FB6CE7E1DDB41D2956FC6333 /* WingmanCore.framework */,
+				87D994C85C00A252B17D1CAA /* WingmanCoreTests.xctest */,
+				8A63BE4D72259FF3B6A55817 /* WingmanMessages.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		"TEMP_B7629E29-4334-4023-B201-63CB6A0BD7E9" /* Wingman */ = {
+			isa = PBXGroup;
+			children = (
+				"TEMP_A8534FF5-7D2A-4B47-995B-41F0CE57EBBE" /* Secrets.xcconfig */,
+			);
+			path = Wingman;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		358338D3AD149B7041FA07AA /* WingmanMessages */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48FDA0BEA5A6A44E7DD4F46E /* Build configuration list for PBXNativeTarget "WingmanMessages" */;
+			buildPhases = (
+				631C8F1865E1CAC1FF711D78 /* Sources */,
+				E47E2E31EA990068D9653854 /* Resources */,
+				320ED6DBB63ED5A92780FC72 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2E34C75B501EE8C46AE4A681 /* PBXTargetDependency */,
+			);
+			name = WingmanMessages;
+			packageProductDependencies = (
+			);
+			productName = WingmanMessages;
+			productReference = 8A63BE4D72259FF3B6A55817 /* WingmanMessages.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		3FCB6826D7C7BA714AE5BEE9 /* WingmanCoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 82DA56639E5367F79E3F7C84 /* Build configuration list for PBXNativeTarget "WingmanCoreTests" */;
+			buildPhases = (
+				C0184B8B6C3645837D15AE70 /* Sources */,
+				83D43BAB00C9EF9CE478B94A /* Frameworks */,
+				C71B96B50AC03878B0AF7C2A /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BED3912F1409C936BE8DA612 /* PBXTargetDependency */,
+			);
+			name = WingmanCoreTests;
+			packageProductDependencies = (
+			);
+			productName = WingmanCoreTests;
+			productReference = 87D994C85C00A252B17D1CAA /* WingmanCoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7BC69115E4A7956735FEF557 /* WingmanCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B379699DD8265471C0CE9152 /* Build configuration list for PBXNativeTarget "WingmanCore" */;
+			buildPhases = (
+				2FEC0C96260CEC180D07630A /* Sources */,
+				61D70484D8CF5B1F88DB3E4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WingmanCore;
+			packageProductDependencies = (
+			);
+			productName = WingmanCore;
+			productReference = FB6CE7E1DDB41D2956FC6333 /* WingmanCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DEC1B9C312BAC507B3A6A828 /* Wingman */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F950301695761883A7B94E7 /* Build configuration list for PBXNativeTarget "Wingman" */;
+			buildPhases = (
+				0C4791B69D5A0D50A8C69AFD /* Sources */,
+				AE21E60F8476DCF6BD5701AD /* Resources */,
+				111E4BE77C58FDF9398EDB3A /* Frameworks */,
+				EA0CC3692F327B8DA724247E /* Embed Foundation Extensions */,
+				583F23AC16F27A2FE9BDD18B /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1D10AC5B44A058E3C20C91E /* PBXTargetDependency */,
+				8F8FE81BB8E47A9386E63103 /* PBXTargetDependency */,
+			);
+			name = Wingman;
+			packageProductDependencies = (
+			);
+			productName = Wingman;
+			productReference = F2FE628C0697A064C96F62AF /* Wingman.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F76BCDAB37EF5C2857E3DDC0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					358338D3AD149B7041FA07AA = {
+						DevelopmentTeam = 4TG2BX9HR2;
+						ProvisioningStyle = Automatic;
+					};
+					3FCB6826D7C7BA714AE5BEE9 = {
+						DevelopmentTeam = 4TG2BX9HR2;
+						ProvisioningStyle = Automatic;
+					};
+					7BC69115E4A7956735FEF557 = {
+						DevelopmentTeam = 4TG2BX9HR2;
+						ProvisioningStyle = Automatic;
+					};
+					DEC1B9C312BAC507B3A6A828 = {
+						DevelopmentTeam = 4TG2BX9HR2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2D228240F6C77BAE377EFC18 /* Build configuration list for PBXProject "Wingman" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 26CD52E9FF76D85178D91D1F;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = F2560EE63B80D7105A7EDB97 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DEC1B9C312BAC507B3A6A828 /* Wingman */,
+				7BC69115E4A7956735FEF557 /* WingmanCore */,
+				3FCB6826D7C7BA714AE5BEE9 /* WingmanCoreTests */,
+				358338D3AD149B7041FA07AA /* WingmanMessages */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		61D70484D8CF5B1F88DB3E4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FE9D1151A334F0DEE1B92AD /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE21E60F8476DCF6BD5701AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74C8EA91744768C507D61EDF /* Assets.xcassets in Resources */,
+				83ADBFC9178CEB5A1FD20928 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E47E2E31EA990068D9653854 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1857EDC50E6C3469878B2F94 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0C4791B69D5A0D50A8C69AFD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E2466015A52930C3807F329 /* AppModel.swift in Sources */,
+				44432CFBE757DE481D889C13 /* CardStyle.swift in Sources */,
+				95834302392818DA87D5127D /* ChipListField.swift in Sources */,
+				918969DCBB6D731DDB049D06 /* EmptyStateView.swift in Sources */,
+				C65F4D3C22D1C43EFEC5BBB9 /* HomeView.swift in Sources */,
+				F280DF1165B633A6E2CF0EF3 /* MeetView.swift in Sources */,
+				85220144DBCCDD048F800433 /* MemoriesView.swift in Sources */,
+				CAE8BCAB3954AB98AA615FC6 /* PrivacyBadge.swift in Sources */,
+				091F91FD58A471E8FFA03582 /* ProfileEditorView.swift in Sources */,
+				F1E30C1425BD61509688E815 /* ReplyComposer.swift in Sources */,
+				D9C59AF2C22CB9D72F473656 /* ReplySuggestionCard.swift in Sources */,
+				345A53409AB489D528DBEC16 /* RootView.swift in Sources */,
+				381139A3E39E2E93C792F79D /* SettingsView.swift in Sources */,
+				2BE29725AE9D9DE0D46AE073 /* WingmanApp.swift in Sources */,
+				04523851CC1DC3F7ADF139C2 /* WingmanButtonStyles.swift in Sources */,
+				5F1E1A7E6943151133C51FD7 /* WingmanMeshBackground.swift in Sources */,
+				515B8D8202571BBD22320059 /* WingmanMetrics.swift in Sources */,
+				C5FB44EEFF5A3543304F2432 /* WingmanPalette.swift in Sources */,
+				FDC60AACB471C0F310EB6946 /* WingmanTextEditor.swift in Sources */,
+				484AA17B62813FFEFD7A4497 /* WingmanTextField.swift in Sources */,
+				3909315E6AF214301EE27467 /* WingmanTypography.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FEC0C96260CEC180D07630A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				483E12C1A64ADA7A33A4577A /* MatchEngine.swift in Sources */,
+				B549C7E8C28AD05CCEFE4A0E /* MessagePayloadCodec.swift in Sources */,
+				78D600AF922509FE00BA42C1 /* Models.swift in Sources */,
+				F1E3A652D20E297993F6111A /* NIMClient.swift in Sources */,
+				8934E9F43B99152F173E0FC0 /* NIMReplyAssistant.swift in Sources */,
+				28B54835EA0926D21D295A1B /* RelationshipGraphImport.swift in Sources */,
+				85ABB51B2B0C327BDF4654A2 /* ReplyAssistant.swift in Sources */,
+				CD9532E228267F8AEE805E3E /* SharedStateStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		631C8F1865E1CAC1FF711D78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				986DAAAE3F0F839556BC22BE /* CardStyle.swift in Sources */,
+				0E5977E08CEFF1A5C2810C34 /* ChipListField.swift in Sources */,
+				1E9952BD86C4BCBD1D36CDCD /* EmptyStateView.swift in Sources */,
+				C9C03C535C493AC94D7840A0 /* MessagesExtensionModel.swift in Sources */,
+				962CA1A8BED2E0D62CDE5BF1 /* MessagesRootView.swift in Sources */,
+				C51AB431EAF0B01691A637CF /* MessagesViewController.swift in Sources */,
+				DC9EEDE8D95ACD5C11D3ECA4 /* PrivacyBadge.swift in Sources */,
+				53D84CD963274E616BD0902E /* ReplyComposer.swift in Sources */,
+				2D95E59542F9F2B1C94C4EBD /* ReplySuggestionCard.swift in Sources */,
+				4119F0011BCCF1E25600B5F9 /* WingmanButtonStyles.swift in Sources */,
+				690ECA091BAD21788746FABC /* WingmanMeshBackground.swift in Sources */,
+				CE2E8A093DA5F184860112F8 /* WingmanMetrics.swift in Sources */,
+				CD0FFC1DBF9E73BB1957F58D /* WingmanPalette.swift in Sources */,
+				25FBD7C39B13932B6A36D7AC /* WingmanTextEditor.swift in Sources */,
+				804D825DC83D543CE3D4FBEC /* WingmanTextField.swift in Sources */,
+				3BA1B4202FF2CEFF7CFF9AC1 /* WingmanTypography.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0184B8B6C3645837D15AE70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1544B4DD07BA5BD66F48F3A2 /* WingmanCoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2E34C75B501EE8C46AE4A681 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7BC69115E4A7956735FEF557 /* WingmanCore */;
+			targetProxy = 65BC89E886206F69C0AE5102 /* PBXContainerItemProxy */;
+		};
+		8F8FE81BB8E47A9386E63103 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 358338D3AD149B7041FA07AA /* WingmanMessages */;
+			targetProxy = 8571BC33D4A42165D350AE82 /* PBXContainerItemProxy */;
+		};
+		A1D10AC5B44A058E3C20C91E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7BC69115E4A7956735FEF557 /* WingmanCore */;
+			targetProxy = 6C7EBB17B8EAFC1528C65378 /* PBXContainerItemProxy */;
+		};
+		BED3912F1409C936BE8DA612 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7BC69115E4A7956735FEF557 /* WingmanCore */;
+			targetProxy = 061E663110982963CFF48B4B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		373ABB505915E38DA2E42DFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = Generated/WingmanMessages.entitlements;
+				INFOPLIST_FILE = "Generated/WingmanMessages-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.naitikgupta.wingman.messages;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		402D13B4965535F6814E6EB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.naitikgupta.wingman.core;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		42B2E4084C0C8B79023819E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Generated/Wingman.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Generated/Wingman-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.naitikgupta.wingman;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		56AD4DDFA126300D6FF3D82D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.naitikgupta.wingman.core;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		6A9EB2841C5325A049C3211B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Generated/Wingman.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Generated/Wingman-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.naitikgupta.wingman;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		99B8EC8B5658753BEBF68EE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.naitikgupta.wingman.core-tests";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "";
+			};
+			name = Debug;
+		};
+		9D6513D9C82CCE7BD3D4DAB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = "TEMP_A8534FF5-7D2A-4B47-995B-41F0CE57EBBE" /* Secrets.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 4TG2BX9HR2;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		9ECCF58B64C70A0F561AD568 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.naitikgupta.wingman.core-tests";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "";
+			};
+			name = Release;
+		};
+		9F1DC6F38A66B764F8D2B2EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = Generated/WingmanMessages.entitlements;
+				INFOPLIST_FILE = "Generated/WingmanMessages-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.naitikgupta.wingman.messages;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DABFDCF87C106D2CAF6C5A18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = "TEMP_A8534FF5-7D2A-4B47-995B-41F0CE57EBBE" /* Secrets.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 4TG2BX9HR2;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D228240F6C77BAE377EFC18 /* Build configuration list for PBXProject "Wingman" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D6513D9C82CCE7BD3D4DAB1 /* Debug */,
+				DABFDCF87C106D2CAF6C5A18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		48FDA0BEA5A6A44E7DD4F46E /* Build configuration list for PBXNativeTarget "WingmanMessages" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F1DC6F38A66B764F8D2B2EB /* Debug */,
+				373ABB505915E38DA2E42DFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4F950301695761883A7B94E7 /* Build configuration list for PBXNativeTarget "Wingman" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A9EB2841C5325A049C3211B /* Debug */,
+				42B2E4084C0C8B79023819E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		82DA56639E5367F79E3F7C84 /* Build configuration list for PBXNativeTarget "WingmanCoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99B8EC8B5658753BEBF68EE6 /* Debug */,
+				9ECCF58B64C70A0F561AD568 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B379699DD8265471C0CE9152 /* Build configuration list for PBXNativeTarget "WingmanCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56AD4DDFA126300D6FF3D82D /* Debug */,
+				402D13B4965535F6814E6EB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F76BCDAB37EF5C2857E3DDC0 /* Project object */;
+}

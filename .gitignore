@@ -1,0 +1,11 @@
+.build/
+.swiftpm/
+DerivedData/
+Secrets.xcconfig
+*.xcarchive
+*.ipa
+*.ndjson
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcuserstate
+.DS_Store
