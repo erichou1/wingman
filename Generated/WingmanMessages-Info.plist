@@ -33,5 +33,7 @@
 	</dict>
 	<key>NVIDIA_API_KEY</key>
 	<string>$(NVIDIA_API_KEY)</string>
+	<key>RENDER_WORKFLOW_URL</key>
+	<string>$(RENDER_WORKFLOW_URL)</string>
 </dict>
 </plist>
