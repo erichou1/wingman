@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: wingman-gateway
+    runtime: node
+    rootDir: gateway
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    plan: free
+    autoDeployTrigger: commit
+    healthCheckPath: /healthz
+    envVars:
+      - key: RENDER_API_KEY
+        sync: false
+      - key: RENDER_WORKFLOW_TASK
+        value: wingman-replies/generateReplyDrafts
+      - key: CORS_ORIGIN
+        sync: false
+      - key: WINGMAN_GATEWAY_TOKEN
+        sync: false

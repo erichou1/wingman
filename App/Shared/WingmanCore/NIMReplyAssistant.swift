@@ -12,6 +12,14 @@ public enum NIMReplyAssistant {
     memories: [MemoryFact],
     client: NIMClient = NIMClient()
   ) async throws -> [ReplySuggestion] {
+    if let endpoint = RenderReplyClient.endpointFromBundle() {
+      return try await RenderReplyClient(endpoint: endpoint).suggest(
+        for: request,
+        writingStyle: writingStyle,
+        memories: memories
+      )
+    }
+
     let incoming = request.incomingMessage.trimmingCharacters(in: .whitespacesAndNewlines)
     guard !incoming.isEmpty else { return [] }
 

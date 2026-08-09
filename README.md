@@ -96,6 +96,10 @@ cp Secrets.xcconfig.example Secrets.xcconfig
 
 `Secrets.xcconfig` is gitignored and wired into both the app and extension targets' Info.plist by `project.yml`'s `configFiles`; it's never committed or hardcoded in source. If a NIM request fails for any reason (no key, network error, non-2xx), Wingman automatically falls back to a deterministic offline draft rather than leaving reply generation dead — check **Settings → NVIDIA NIM** for key status and a manual connection test.
 
+## Render Workflow reply path
+
+For the hackathon deployment, Wingman can send reply requests through Render Workflows. The workflow runs the three tones in parallel through a Render gateway, keeping the Render and NVIDIA keys off the phone. Leave `RENDER_WORKFLOW_URL` at its placeholder to keep using the direct-NIM path. The full local and production setup is in [Render Workflow integration](docs/RENDER_WORKFLOW.md).
+
 See:
 
 - [Product plan](docs/PRODUCT_PLAN.md)

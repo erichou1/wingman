@@ -57,6 +57,7 @@ targets:
         MSSupportedPresentationContexts:
           - MSMessagesAppPresentationContextMessages
         NVIDIA_API_KEY: $(NVIDIA_API_KEY)
+        RENDER_WORKFLOW_URL: $(RENDER_WORKFLOW_URL)
         NSExtension:
           NSExtensionPointIdentifier: com.apple.message-payload-provider
           NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).MessagesViewController
@@ -90,6 +91,7 @@ targets:
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         NVIDIA_API_KEY: $(NVIDIA_API_KEY)
+        RENDER_WORKFLOW_URL: $(RENDER_WORKFLOW_URL)
         LSApplicationCategoryType: public.app-category.social-networking
         UILaunchScreen: {}
         UISupportedInterfaceOrientations:

@@ -1,0 +1,16 @@
+{
+  "incomingMessage": "Can we talk tomorrow?",
+  "relationship": "friendship",
+  "context": "We missed each other this week",
+  "goal": "Find a time",
+  "writingStyle": {
+    "toneNotes": "Warm, concise, and conversational",
+    "grammarPreferences": "Use contractions",
+    "signaturePhrases": [],
+    "thingsToAvoid": []
+  },
+  "memories": [
+    "We usually talk after school",
+    "They prefer a little notice before plans"
+  ]
+}
