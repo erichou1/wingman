@@ -1,13 +1,14 @@
 # Wingman
 
-Wingman is an iMessage-first relationship copilot for dating, friendship, family, work, community, and new connections. It helps a person draft a reply when they are stuck and introduces two people through “Meet My Human” without ranking them or choosing for them.
+Wingman is an agent-powered dating and friendship discovery app. A person controls the profile facts their agent may use, reviews people in a swipe feed, and gets in-app help once a mutual match opens chat. The existing iMessage extension remains an optional reply-assistance channel.
 
-The prototype is one iOS app with an embedded Messages extension:
+The current prototype includes:
 
+- **Profile sync gateway:** a SQLite database on the developer Mac that receives only approved profile fields and makes an on-LAN feed available to the iPhone app.
 - **Help me reply:** paste a message, add relationship context and intent, review three editable drafts, then insert one into the Messages compose field.
-- **My human:** build a private profile and approve each field independently before it may enter matching.
-- **Meet My Human:** compare two approved profiles, explain possible resonance and friction, require both humans to opt in, then insert an iMessage introduction card.
-- **Privacy:** Wingman never sends autonomously. The current iPhone app has no transcript access and stores prototype state locally in a shared App Group.
+- **My human:** build a profile and approve each field independently before it may enter the prototype sync gateway.
+- **Meet My Human:** compare approved profiles locally while the swipe, reciprocal-match, chat, and agent-reveal flows are implemented.
+- **Privacy:** Wingman never sends autonomously. The profile gateway never receives raw Messages history.
 
 ## Open the iOS prototype
 
@@ -102,6 +103,7 @@ For the hackathon deployment, Wingman can send reply requests through Render Wor
 
 See:
 
+- [Profile sync gateway](docs/PROFILE_SYNC.md)
 - [Product plan](docs/PRODUCT_PLAN.md)
 - [Message history architecture](docs/MESSAGE_HISTORY_ARCHITECTURE.md)
 - [TestFlight checklist](docs/TESTFLIGHT_CHECKLIST.md)

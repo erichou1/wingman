@@ -9,3 +9,5 @@ Secrets.xcconfig
 *.xcworkspace/xcuserdata/
 *.xcuserstate
 .DS_Store
+.idea/
+gateway/data/

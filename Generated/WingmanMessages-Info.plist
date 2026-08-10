@@ -24,6 +24,11 @@
 	<array>
 		<string>MSMessagesAppPresentationContextMessages</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+	</dict>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionPointIdentifier</key>
@@ -35,5 +40,9 @@
 	<string>$(NVIDIA_API_KEY)</string>
 	<key>RENDER_WORKFLOW_URL</key>
 	<string>$(RENDER_WORKFLOW_URL)</string>
+	<key>WINGMAN_GATEWAY_TOKEN</key>
+	<string>$(WINGMAN_GATEWAY_TOKEN)</string>
+	<key>WINGMAN_SYNC_BASE_URL</key>
+	<string>$(WINGMAN_SYNC_BASE_URL)</string>
 </dict>
 </plist>

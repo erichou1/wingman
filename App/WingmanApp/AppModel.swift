@@ -13,12 +13,18 @@ final class AppModel {
   var candidateCount: Int = 0
   // @Snapshotable
   var lastError: String? = nil
+  // @Snapshotable
+  var loginEmail: String = ""
 
   var state: WingmanState
   var replyRequest = ReplyRequest(incomingMessage: "", relationship: .friendship)
   var replySuggestions: [ReplySuggestion] = []
   // @Snapshotable
   var isGeneratingReplies: Bool = false
+  // @Snapshotable
+  var isSyncingProfiles: Bool = false
+  // @Snapshotable
+  var lastProfileSyncAt: Date? = nil
   var selectedCandidateID: UUID?
   var selectedInsightID: UUID?
 
@@ -33,6 +39,118 @@ final class AppModel {
       self.lastError = error.localizedDescription
     }
     refreshSnapshot()
+  }
+
+  func completePrototypeLogin() {
+    let email = loginEmail.trimmingCharacters(in: .whitespacesAndNewlines)
+    guard email.contains("@"), email.contains(".") else {
+      lastError = "Enter a valid email address to continue."
+      return
+    }
+    state.hasCompletedLogin = true
+    state.hasCompletedAgentSetup = false
+    state.signedInEmail = email
+    seed(DemoAccounts.resolve(email: email))
+    save()
+  }
+
+  /// The account backing this session. Always resolves, so every sign-in lands
+  /// in a usable demo state.
+  var activeDemoAccount: DemoAccount {
+    DemoAccounts.resolve(email: state.signedInEmail)
+  }
+
+  var chatGPTContext: ChatGPTContextPacket {
+    activeDemoAccount.chatGPTContext
+  }
+
+  /// The picker's primary action. ChatGPT's import runs from here rather than
+  /// from the row itself, so choosing a provider only ticks it and nothing
+  /// happens until the person commits.
+  func continueFromAgentSetup() {
+    guard !state.connectedAgentProviders.isEmpty else {
+      lastError = "Choose at least one AI provider before continuing."
+      return
+    }
+    if state.connectedAgentProviders.contains(.openAI) {
+      beginChatGPTImport()
+    } else {
+      completeAgentSetup()
+    }
+  }
+
+  /// Routes to the ChatGPT import screen.
+  func beginChatGPTImport() {
+    state.hasCompletedAgentSetup = false
+    state.pendingChatGPTImport = true
+    save()
+  }
+
+  /// Finishing the import is what completes agent setup, so the person lands in
+  /// the app rather than back on the picker they already committed from.
+  func completeChatGPTImport() {
+    state.pendingChatGPTImport = false
+    state.hasCompletedAgentSetup = true
+    save()
+  }
+
+  /// Loads an account: its authored profile, its ChatGPT-derived memories, and
+  /// the other account as a discovery candidate.
+  ///
+  /// Deliberately leaves `connectedAgentProviders` empty. Pre-selecting ChatGPT
+  /// here made the picker arrive with its row already ticked, so the first tap
+  /// read as a deselect and the import never ran.
+  private func seed(_ account: DemoAccount) {
+    state.currentProfile = account.profile
+    state.memories.removeAll { $0.source == .chatGPT }
+    state.memories.append(contentsOf: MemoryFact.chatGPTFacts(from: account.chatGPTContext))
+    state.connectedAgentProviders = []
+
+    let others = DemoAccounts.counterparts(of: account)
+    if !others.isEmpty {
+      state.candidates = others.map(\.profile)
+      selectedCandidateID = others.first?.profile.id
+    }
+  }
+
+  func returnToLogin() {
+    state.hasCompletedLogin = false
+    state.signedInEmail = nil
+    state.connectedAgentProviders = []
+    state.hasCompletedAgentSetup = false
+    // Without this, signing out during the import leaves the flag set and the
+    // next sign-in routes straight back into the import screen.
+    state.pendingChatGPTImport = false
+    save()
+  }
+
+  /// Signs out to the login screen. Profile, memories, and candidates stay on
+  /// device; signing back in re-seeds them.
+  func signOut() {
+    returnToLogin()
+    loginEmail = ""
+    replySuggestions = []
+    selectedCandidateID = nil
+    selectedInsightID = nil
+  }
+
+  func toggleAgentProvider(_ provider: AgentProvider) {
+    if let index = state.connectedAgentProviders.firstIndex(of: provider) {
+      state.connectedAgentProviders.remove(at: index)
+    } else {
+      state.connectedAgentProviders.append(provider)
+    }
+    state.hasCompletedAgentSetup = false
+    save()
+  }
+
+  func completeAgentSetup() {
+    guard !state.connectedAgentProviders.isEmpty else {
+      lastError = "Choose at least one AI provider before continuing."
+      return
+    }
+    state.hasCompletedAgentSetup = true
+    save()
   }
 
   var selectedCandidate: HumanProfile? {
@@ -75,6 +193,45 @@ final class AppModel {
     } catch {
       replySuggestions = ReplyAssistant.suggest(for: replyRequest)
       lastError = "Using offline drafts — NVIDIA NIM request failed: \(error.localizedDescription)"
+    }
+  }
+
+  var syncIsConfigured: Bool {
+    WingmanSyncConfiguration.fromBundle() != nil
+  }
+
+  func syncProfiles() {
+    guard !isSyncingProfiles else { return }
+    Task { await performProfileSync() }
+  }
+
+  private func performProfileSync() async {
+    guard state.currentProfile.isReadyForIntroductions else {
+      lastError = "Approve your name, connection types, and at least one value or interest before syncing."
+      return
+    }
+    guard let configuration = WingmanSyncConfiguration.fromBundle() else {
+      lastError = "Set WINGMAN_SYNC_BASE_URL in Secrets.xcconfig, rebuild, then try sync again."
+      return
+    }
+
+    isSyncingProfiles = true
+    defer { isSyncingProfiles = false }
+    save()
+    do {
+      let client = WingmanSyncClient(
+        configuration: configuration,
+        token: WingmanSyncClient.tokenFromBundle()
+      )
+      state.candidates = try await client.sync(profile: state.currentProfile)
+      selectedCandidateID = state.candidates.first?.id
+      state.updatedAt = Date()
+      try store?.save(state)
+      lastProfileSyncAt = Date()
+      lastError = nil
+      refreshSnapshot()
+    } catch {
+      lastError = "Could not sync profiles: \(error.localizedDescription)"
     }
   }
 

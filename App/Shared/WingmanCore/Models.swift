@@ -262,6 +262,27 @@ public struct ReplySuggestion: Codable, Equatable, Identifiable, Sendable {
 public enum MemorySource: String, Codable, Sendable {
   case userEntered
   case macGraph
+  case chatGPT
+
+  /// Provenance shown on a memory row. Exhaustive here rather than as an `if`
+  /// chain in the view, so a new source cannot ship as an unlabelled fact whose
+  /// origin the person cannot see.
+  public var badgeLabel: String? {
+    switch self {
+    case .userEntered: nil
+    case .macGraph: "mac"
+    case .chatGPT: "gpt"
+    }
+  }
+
+  /// Whether a single fact can be deleted by hand. Mac-graph facts are replaced
+  /// wholesale on re-import, so a one-off deletion would silently return.
+  public var allowsManualRemoval: Bool {
+    switch self {
+    case .userEntered, .chatGPT: true
+    case .macGraph: false
+    }
+  }
 }
 
 public struct MemoryFact: Codable, Equatable, Identifiable, Sendable {
@@ -297,8 +318,45 @@ public struct WritingStyleProfile: Codable, Equatable, Sendable {
   }
 }
 
+public enum AgentProvider: String, Codable, CaseIterable, Identifiable, Sendable {
+  case claude
+  case openAI
+  case gemini
+
+  public var id: String { rawValue }
+
+  public static let onboardingProviders: [AgentProvider] = [.openAI, .claude]
+
+  public var title: String {
+    switch self {
+    case .claude: "Claude"
+    case .openAI: "ChatGPT / OpenAI"
+    case .gemini: "Gemini"
+    }
+  }
+
+  public var detail: String {
+    switch self {
+    case .claude: "Thoughtful context and calibrated introductions"
+    case .openAI: "Flexible conversation support and matching"
+    case .gemini: "Google-connected assistance when available"
+    }
+  }
+}
+
+public enum OnboardingRoute: Equatable, Sendable {
+  case login
+  case connectAgent
+  /// The ChatGPT import step. A route rather than a sheet presented from the
+  /// picker: that sheet was set in the same update as the model mutation behind
+  /// it, and with an `.alert` bound further up the hierarchy the presentation
+  /// was silently dropped. Routing makes it deterministic and survives relaunch.
+  case importingChatGPT
+  case app
+}
+
 public struct WingmanState: Codable, Equatable, Sendable {
-  public static let schemaVersion = 2
+  public static let schemaVersion = 5
 
   public var version: Int
   public var currentProfile: HumanProfile
@@ -307,6 +365,14 @@ public struct WingmanState: Codable, Equatable, Sendable {
   public var consents: [IntroductionConsent]
   public var writingStyle: WritingStyleProfile
   public var memories: [MemoryFact]
+  public var hasCompletedLogin: Bool
+  /// Which account signed in, so a relaunch restores the right demo persona and
+  /// the UI can say whose ChatGPT context is loaded.
+  public var signedInEmail: String?
+  public var connectedAgentProviders: [AgentProvider]
+  public var hasCompletedAgentSetup: Bool
+  /// True between choosing ChatGPT and finishing its import.
+  public var pendingChatGPTImport: Bool
   public var updatedAt: Date
 
   public init(
@@ -317,6 +383,11 @@ public struct WingmanState: Codable, Equatable, Sendable {
     consents: [IntroductionConsent] = [],
     writingStyle: WritingStyleProfile = WritingStyleProfile(),
     memories: [MemoryFact] = [],
+    hasCompletedLogin: Bool = false,
+    signedInEmail: String? = nil,
+    connectedAgentProviders: [AgentProvider] = [],
+    hasCompletedAgentSetup: Bool = false,
+    pendingChatGPTImport: Bool = false,
     updatedAt: Date = Date()
   ) {
     self.version = version
@@ -326,7 +397,19 @@ public struct WingmanState: Codable, Equatable, Sendable {
     self.consents = consents
     self.writingStyle = writingStyle
     self.memories = memories
+    self.hasCompletedLogin = hasCompletedLogin
+    self.signedInEmail = signedInEmail
+    self.connectedAgentProviders = connectedAgentProviders
+    self.hasCompletedAgentSetup = hasCompletedAgentSetup
+    self.pendingChatGPTImport = pendingChatGPTImport
     self.updatedAt = updatedAt
+  }
+
+  public var onboardingRoute: OnboardingRoute {
+    guard hasCompletedLogin else { return .login }
+    if pendingChatGPTImport { return .importingChatGPT }
+    guard hasCompletedAgentSetup, !connectedAgentProviders.isEmpty else { return .connectAgent }
+    return .app
   }
 
   public static let empty = WingmanState()
@@ -335,7 +418,9 @@ public struct WingmanState: Codable, Equatable, Sendable {
   // keys) still loads instead of tripping SharedStateStore's decode-failure
   // fallback to `.empty`, which would otherwise wipe an existing local profile.
   private enum CodingKeys: String, CodingKey {
-    case version, currentProfile, candidates, insights, consents, writingStyle, memories, updatedAt
+    case version, currentProfile, candidates, insights, consents, writingStyle, memories
+    case hasCompletedLogin, signedInEmail, connectedAgentProviders, hasCompletedAgentSetup
+    case pendingChatGPTImport, updatedAt
   }
 
   public init(from decoder: Decoder) throws {
@@ -349,6 +434,14 @@ public struct WingmanState: Codable, Equatable, Sendable {
       try container.decodeIfPresent(WritingStyleProfile.self, forKey: .writingStyle)
       ?? WritingStyleProfile()
     memories = try container.decodeIfPresent([MemoryFact].self, forKey: .memories) ?? []
+    hasCompletedLogin = try container.decodeIfPresent(Bool.self, forKey: .hasCompletedLogin) ?? false
+    signedInEmail = try container.decodeIfPresent(String.self, forKey: .signedInEmail)
+    connectedAgentProviders =
+      try container.decodeIfPresent([AgentProvider].self, forKey: .connectedAgentProviders) ?? []
+    hasCompletedAgentSetup =
+      try container.decodeIfPresent(Bool.self, forKey: .hasCompletedAgentSetup) ?? false
+    pendingChatGPTImport =
+      try container.decodeIfPresent(Bool.self, forKey: .pendingChatGPTImport) ?? false
     updatedAt = try container.decode(Date.self, forKey: .updatedAt)
   }
 }

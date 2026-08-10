@@ -1,0 +1,294 @@
+<title>Mutual match rate by matching algorithm</title>
+<style>
+  :root {
+    color-scheme: light;
+    --canvas: #F7F4F1;
+    --ink:    #1A1512;
+    --ink-2:  #5C514B;
+    --ink-3:  #8B7D75;
+    --rule:   #CFC4BB;
+    --grid:   rgba(26, 21, 18, 0.10);
+
+    --tinder:   #FD2A64;
+    --match:    #0E3D6E;
+    --okcupid:  #2D28E8;
+    --bumble:   #D99400;
+    --hinge:    #1A1A1A;
+    --hinge-ink: #FFFFFF;
+    --bumble-ink: #3A2600;
+    --wing-a:   #FF554F;
+    --wing-b:   #FF2165;
+    --wing-ink: #E8324F;
+    --wing-band: rgba(255, 60, 90, 0.07);
+
+    --f-display: ui-sans-serif, -apple-system, "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
+    --f-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --canvas: #17120F;
+      --ink:    #F5EEE9;
+      --ink-2:  #BCAEA6;
+      --ink-3:  #8B7D75;
+      --rule:   #4A3E38;
+      --grid:   rgba(245, 238, 233, 0.11);
+      --tinder:  #FF5C88;
+      --match:   #5B9BD8;
+      --okcupid: #7B76FF;
+      --bumble:  #FFC629;
+      --hinge:   #EDE7E2;
+      --hinge-ink: #17120F;
+      --bumble-ink: #17120F;
+      --wing-ink: #FF6A72;
+      --wing-band: rgba(255, 96, 110, 0.10);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --canvas: #17120F;
+    --ink:    #F5EEE9;
+    --ink-2:  #BCAEA6;
+    --ink-3:  #8B7D75;
+    --rule:   #4A3E38;
+    --grid:   rgba(245, 238, 233, 0.11);
+    --tinder:  #FF5C88;
+    --match:   #5B9BD8;
+    --okcupid: #7B76FF;
+    --bumble:  #FFC629;
+    --hinge:   #EDE7E2;
+    --hinge-ink: #17120F;
+    --bumble-ink: #17120F;
+    --wing-ink: #FF6A72;
+    --wing-band: rgba(255, 96, 110, 0.10);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--canvas);
+    color: var(--ink);
+    font-family: var(--f-display);
+    -webkit-font-smoothing: antialiased;
+    font-variant-numeric: tabular-nums;
+  }
+  .wrap {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 40px 24px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .kicker {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(24px, 3.1vw, 35px);
+    line-height: 1.08;
+    letter-spacing: -0.028em;
+    font-weight: 740;
+    text-wrap: balance;
+  }
+  .sub {
+    margin: 0;
+    max-width: 96ch;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+  .sub b { color: var(--ink); font-weight: 640; }
+  .chart { width: 100%; overflow-x: auto; }
+  .chart svg { display: block; width: 100%; min-width: 760px; height: auto; }
+  code { font-family: var(--f-mono); font-size: 11.5px; }
+  .note {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.55;
+    color: var(--ink-3);
+    max-width: 96ch;
+    border-top: 1px solid var(--rule);
+    padding-top: 13px;
+  }
+  #tip {
+    position: fixed; pointer-events: none; opacity: 0;
+    transform: translate(-50%, -125%);
+    background: var(--ink); color: var(--canvas);
+    font-family: var(--f-mono); font-size: 11.5px;
+    padding: 6px 9px; white-space: nowrap; z-index: 40;
+    transition: opacity 0.11s ease;
+  }
+  .hit { fill: transparent; }
+  @media (prefers-reduced-motion: no-preference) {
+    .grow { animation: grow 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+    @keyframes grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+  }
+</style>
+
+<div class="wrap">
+  <div class="kicker">CRRS / Libimseti benchmark &nbsp;·&nbsp; Projected, not measured</div>
+  <h1>Mutual match rate on a ten-card deck</h1>
+  <div class="chart" id="chart"></div>
+  <p class="note">
+    Projected values, not runs. Benchmark: <code>RUCAIBox/CRRS</code>, Libimseti dating split.
+    App marks are stand-ins, not official logos.
+  </p>
+</div>
+
+<div id="tip" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  var NS = "http://www.w3.org/2000/svg";
+  var tip = document.getElementById("tip");
+  var MONO = 'ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace';
+  var SANS = 'ui-sans-serif, -apple-system, "Helvetica Neue", "Segoe UI", system-ui, sans-serif';
+
+  function el(n, a) { var e = document.createElementNS(NS, n); for (var k in a) e.setAttribute(k, a[k]); return e; }
+  function txt(x, y, s, a) { var t = el("text", a || {}); t.setAttribute("x", x); t.setAttribute("y", y); t.textContent = s; return t; }
+
+  var DATA = [
+    { app: "Tinder", color: "var(--tinder)", v: 3.1, glyph: "flame",
+      lines: ["Elo-style desirability", "ranking"] },
+    { app: "Match", color: "var(--match)", v: 4.6, glyph: "heart",
+      lines: ["Synapse behavioral", "learning"] },
+    { app: "OkCupid", color: "var(--okcupid)", v: 5.4, glyph: "ok",
+      lines: ["Questionnaire", "compatibility"] },
+    { app: "Bumble", color: "var(--bumble)", v: 6.2, glyph: "hex",
+      ink: "var(--bumble-ink)", lines: ["Engagement collaborative", "filtering"] },
+    { app: "Hinge", color: "var(--hinge)", v: 8.0, glyph: "h",
+      ink: "var(--hinge-ink)", lines: ["Gale-Shapley", "stable matching"] },
+    { app: "Wingman", color: "url(#wingrad)", v: 11.6, glyph: "wingman", ours: true,
+      lines: ["Rehearsal Search", "(agent simulation)"] }
+  ];
+
+  var W = 1180, H = 526;
+  var padL = 62, padR = 26, top = 58, base = 372;
+  var colArea = W - padL - padR, colW = colArea / DATA.length, barW = 96;
+  var MAX = 12.6;
+  var TICKS = [0, 3, 6, 9, 12];
+
+  function y(v) { return base - (v / MAX) * (base - top); }
+
+  var svg = el("svg", { viewBox: "0 0 " + W + " " + H, role: "img",
+    "aria-label": "Vertical bar chart of mutual match rate on a ten-card deck. Tinder Elo-style desirability ranking 3.1 percent. Match Synapse behavioral learning 4.6 percent. OkCupid questionnaire compatibility 5.4 percent. Bumble engagement collaborative filtering 6.2 percent. Hinge Gale-Shapley stable matching 8.0 percent. Wingman Rehearsal Search 11.6 percent." });
+
+  var defs = el("defs");
+  var grad = el("linearGradient", { id: "wingrad", x1: "0", y1: "0", x2: "0", y2: "1" });
+  grad.appendChild(el("stop", { offset: "0", "stop-color": "var(--wing-a)" }));
+  grad.appendChild(el("stop", { offset: "1", "stop-color": "var(--wing-b)" }));
+  defs.appendChild(grad);
+  svg.appendChild(defs);
+
+  // highlight band behind the Wingman column
+  DATA.forEach(function (d, i) {
+    if (!d.ours) return;
+    var cx = padL + colW * i + colW / 2;
+    svg.appendChild(el("rect", { x: cx - colW / 2 + 6, y: 16, width: colW - 12, height: 494,
+      fill: "var(--wing-band)", rx: 6, ry: 6 }));
+  });
+
+  // gridlines
+  TICKS.forEach(function (t) {
+    svg.appendChild(el("line", { x1: padL - 14, x2: W - padR, y1: y(t), y2: y(t),
+      stroke: t === 0 ? "var(--rule)" : "var(--grid)", "stroke-width": t === 0 ? 1.5 : 1 }));
+    svg.appendChild(txt(padL - 24, y(t) + 4, t + "%", {
+      fill: "var(--ink-3)", "font-family": MONO, "font-size": 12.5, "text-anchor": "end" }));
+  });
+
+  /* ---- brand glyphs, drawn for this chart ---- */
+  function glyph(kind, cx, cy, size, color, ink) {
+    ink = ink || "#FFFFFF";
+    var g = el("g", {});
+    var r = size / 2;
+
+    if (kind === "wingman") {
+      // the real Wingman mark: rounded speech bubble with the W
+      g.appendChild(el("rect", { x: cx - r, y: cy - r, width: size, height: size,
+        rx: size * 0.215, fill: "url(#wingrad)" }));
+      var s = size / 1024;
+      var bubble = el("path", { d: "M194 322c0-62 50-112 112-112h412c62 0 112 50 112 112v262c0 62-50 112-112 112H491L335 818c-26 20-64 2-64-31v-91c-45-15-77-57-77-107V322z",
+        fill: "#FFFDF6" });
+      var wm = el("path", { d: "M326 373l111 218 75-145 75 145 111-218", fill: "none",
+        stroke: "var(--wing-b)", "stroke-linecap": "round", "stroke-linejoin": "round", "stroke-width": 78 });
+      var inner = el("g", { transform: "translate(" + (cx - r) + "," + (cy - r) + ") scale(" + s + ")" });
+      inner.appendChild(bubble); inner.appendChild(wm);
+      g.appendChild(inner);
+      return g;
+    }
+
+    g.appendChild(el("rect", { x: cx - r, y: cy - r, width: size, height: size,
+      rx: size * 0.235, fill: color }));
+
+    var k = size / 24;
+    function P(d, extra) {
+      var a = { d: d, fill: ink, transform: "translate(" + (cx - r) + "," + (cy - r) + ") scale(" + k + ")" };
+      for (var q in extra) a[q] = extra[q];
+      return el("path", a);
+    }
+    function T(s, fs, dy) {
+      return txt(cx, cy + (dy || 0), s, { fill: ink, "font-family": SANS,
+        "font-size": fs, "font-weight": 760, "text-anchor": "middle", "letter-spacing": "-0.02em" });
+    }
+
+    if (kind === "flame") {
+      g.appendChild(P("M12 4.2c1.4 2.3.5 3.9 1.7 5.4 1 1.2 2.6 1.9 2.6 4.3a4.3 4.3 0 0 1-8.6 0c0-1.5.7-2.4.7-2.4s.4.9 1.2 1.2c0 0-1.1-2.6.5-4.7 1-1.3 1.7-2.2 1.9-3.8z"));
+    } else if (kind === "heart") {
+      g.appendChild(P("M12 18.6l-1.1-1C7 14.1 5 12.3 5 10.1 5 8.3 6.4 7 8.2 7c1 0 2 .5 2.6 1.3l1.2 1.5 1.2-1.5C13.8 7.5 14.8 7 15.8 7 17.6 7 19 8.3 19 10.1c0 2.2-2 4-5.9 7.5l-1.1 1z"));
+    } else if (kind === "hex") {
+      g.appendChild(P("M12 3.6l6.6 3.9v8.9L12 20.4l-6.6-4V7.5L12 3.6zm0 2.6L7.6 8.8v6.3L12 17.8l4.4-2.7V8.8L12 6.2z"));
+      g.appendChild(el("circle", { cx: cx, cy: cy, r: size * 0.115, fill: ink }));
+    } else if (kind === "ok") {
+      g.appendChild(T("ok", size * 0.46, size * 0.16));
+    } else if (kind === "h") {
+      g.appendChild(T("h", size * 0.62, size * 0.22));
+    }
+    return g;
+  }
+
+  /* ---- columns ---- */
+  DATA.forEach(function (d, i) {
+    var cx = padL + colW * i + colW / 2;
+    var h = base - y(d.v);
+
+    var bar = el("rect", { x: cx - barW / 2, y: y(d.v), width: barW, height: h,
+      fill: d.color, rx: 6, ry: 6, class: "grow" });
+    bar.style.transformOrigin = cx + "px " + base + "px";
+    bar.style.animationDelay = (i * 75) + "ms";
+    svg.appendChild(bar);
+    // square off the bottom of the rounded bar so it sits on the baseline
+    svg.appendChild(el("rect", { x: cx - barW / 2, y: base - 7, width: barW, height: 7, fill: d.color }));
+
+    svg.appendChild(txt(cx, y(d.v) - 17, d.v.toFixed(1) + "%", {
+      fill: d.ours ? "var(--wing-ink)" : d.color,
+      "font-family": SANS, "font-size": d.ours ? 34 : 27,
+      "font-weight": 760, "text-anchor": "middle", "letter-spacing": "-0.03em" }));
+
+    svg.appendChild(glyph(d.glyph, cx, base + 42, 42, d.color, d.ink));
+
+    svg.appendChild(txt(cx, base + 90, d.app, {
+      fill: "var(--ink)", "font-family": SANS, "font-size": 17,
+      "font-weight": d.ours ? 740 : 620, "text-anchor": "middle", "letter-spacing": "-0.01em" }));
+
+    d.lines.forEach(function (ln, j) {
+      svg.appendChild(txt(cx, base + 112 + j * 15, ln, {
+        fill: "var(--ink-3)", "font-family": MONO, "font-size": 11, "text-anchor": "middle" }));
+    });
+
+    var hit = el("rect", { x: cx - colW / 2, y: 16, width: colW, height: 494, class: "hit" });
+    hit.addEventListener("mousemove", function (e) {
+      tip.textContent = d.app + " · " + d.lines.join(" ") + " · " + d.v.toFixed(1) + "%";
+      tip.style.left = e.clientX + "px"; tip.style.top = e.clientY + "px"; tip.style.opacity = "1";
+    });
+    hit.addEventListener("mouseleave", function () { tip.style.opacity = "0"; });
+    svg.appendChild(hit);
+  });
+
+  document.getElementById("chart").appendChild(svg);
+})();
+</script>

@@ -48,6 +48,16 @@ public enum WingmanPalette {
   public static let meshInk = rgb(0x17, 0x16, 0x18)
   public static let meshInkSecondary = rgb(0x5C, 0x59, 0x63)
 
+  /// Onboarding surface. A warm off-white ground with near-black type, white
+  /// cards, hairline rules, and a single deep accent — no gradient anywhere.
+  /// Fixed like the mesh tokens, since these screens commit to one look
+  /// regardless of system theme; pair them with `meshInk`/`meshInkSecondary`.
+  public static let warmCanvas = rgb(0xF4, 0xF2, 0xED)
+  public static let warmSurface = rgb(0xFF, 0xFF, 0xFF)
+  public static let warmHairline = rgb(0x17, 0x16, 0x18).opacity(0.12)
+  /// The one accent on the onboarding surface: selection, the bloom, links.
+  public static let bloom = rgb(0x6C, 0x00, 0x75)
+
   private static func rgb(_ r: Int, _ g: Int, _ b: Int) -> Color {
     Color(red: Double(r) / 255, green: Double(g) / 255, blue: Double(b) / 255)
   }

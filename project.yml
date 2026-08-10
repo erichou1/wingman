@@ -58,6 +58,10 @@ targets:
           - MSMessagesAppPresentationContextMessages
         NVIDIA_API_KEY: $(NVIDIA_API_KEY)
         RENDER_WORKFLOW_URL: $(RENDER_WORKFLOW_URL)
+        WINGMAN_SYNC_BASE_URL: $(WINGMAN_SYNC_BASE_URL)
+        WINGMAN_GATEWAY_TOKEN: $(WINGMAN_GATEWAY_TOKEN)
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
         NSExtension:
           NSExtensionPointIdentifier: com.apple.message-payload-provider
           NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).MessagesViewController
@@ -92,6 +96,11 @@ targets:
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         NVIDIA_API_KEY: $(NVIDIA_API_KEY)
         RENDER_WORKFLOW_URL: $(RENDER_WORKFLOW_URL)
+        WINGMAN_SYNC_BASE_URL: $(WINGMAN_SYNC_BASE_URL)
+        WINGMAN_GATEWAY_TOKEN: $(WINGMAN_GATEWAY_TOKEN)
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
+        NSLocalNetworkUsageDescription: Wingman connects to the profile-sync gateway on your Mac during a private development test.
         LSApplicationCategoryType: public.app-category.social-networking
         UILaunchScreen: {}
         UISupportedInterfaceOrientations:

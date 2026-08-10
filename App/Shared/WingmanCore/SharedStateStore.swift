@@ -39,10 +39,17 @@ public struct SharedStateStore {
     guard let data = defaults.data(forKey: Self.stateKey) else { return .empty }
     do {
       let state = try JSONDecoder.wingman.decode(WingmanState.self, from: data)
-      guard state.version == WingmanState.schemaVersion else {
+      // Older saves migrate forward: every field added since v1 decodes with
+      // `decodeIfPresent` and a default, so an equality check here would reject
+      // state the decoder can already read — wiping a real profile on upgrade,
+      // which is the exact failure that decoder was written to avoid. Newer
+      // schemas are still refused, since this build cannot know their shape.
+      guard state.version <= WingmanState.schemaVersion else {
         throw StateStoreError.unsupportedSchema(state.version)
       }
-      return state
+      var migrated = state
+      migrated.version = WingmanState.schemaVersion
+      return migrated
     } catch let error as StateStoreError {
       throw error
     } catch {

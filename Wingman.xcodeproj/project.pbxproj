@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01816716444BE5FB8480546F /* ChatGPTCrawlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8603B9D84CDDF521A61B39 /* ChatGPTCrawlView.swift */; };
 		04523851CC1DC3F7ADF139C2 /* WingmanButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C8D94BB6E4E4B24227BE55 /* WingmanButtonStyles.swift */; };
 		091F91FD58A471E8FFA03582 /* ProfileEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239D0C6A64E7028542A0CBA7 /* ProfileEditorView.swift */; };
 		0E198F48B23772F539DFE10D /* RenderReplyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638AC147BDB98830CC7EF1BF /* RenderReplyClient.swift */; };
@@ -15,6 +16,8 @@
 		1857EDC50E6C3469878B2F94 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 3D01AAC7E9478F0969D5A6AD /* PrivacyInfo.xcprivacy */; };
 		1E9952BD86C4BCBD1D36CDCD /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A15FD7D2CDC504BB6947C /* EmptyStateView.swift */; };
 		1FE9D1151A334F0DEE1B92AD /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = BFB03D1602F9A383943E37F9 /* PrivacyInfo.xcprivacy */; };
+		20421058E0281DA23FC5B76E /* SwipeDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD192B402B6BFD4DBF0FAA28 /* SwipeDeck.swift */; };
+		205470FD3257AD1DBF44122D /* WingmanMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5829F9A69BAF404349270CC0 /* WingmanMark.swift */; };
 		25FBD7C39B13932B6A36D7AC /* WingmanTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BF8015BC173B0BC1808A15 /* WingmanTextEditor.swift */; };
 		28B54835EA0926D21D295A1B /* RelationshipGraphImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009A1E541BD1AFA56E878741 /* RelationshipGraphImport.swift */; };
 		2BE29725AE9D9DE0D46AE073 /* WingmanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60DA1D3328F3FAEDFE04C65 /* WingmanApp.swift */; };
@@ -31,7 +34,10 @@
 		484AA17B62813FFEFD7A4497 /* WingmanTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9B593F4C43DAA7816A3908 /* WingmanTextField.swift */; };
 		515B8D8202571BBD22320059 /* WingmanMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932E01A430D6B515C9F38E9 /* WingmanMetrics.swift */; };
 		53D84CD963274E616BD0902E /* ReplyComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6D59858989EA301ADCAC /* ReplyComposer.swift */; };
+		5F108EE5CB5921BEFE32FD7C /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294444ED8487452DAB210A8 /* OnboardingView.swift */; };
 		5F1E1A7E6943151133C51FD7 /* WingmanMeshBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612072C87746C621A1252456 /* WingmanMeshBackground.swift */; };
+		65257B14ED0AA1617A867A6E /* WingmanMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5829F9A69BAF404349270CC0 /* WingmanMark.swift */; };
+		66741D9F67847208D409D7B6 /* WingmanEditorialStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2E1711E946E864AF169EF4 /* WingmanEditorialStyle.swift */; };
 		690ECA091BAD21788746FABC /* WingmanMeshBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612072C87746C621A1252456 /* WingmanMeshBackground.swift */; };
 		69325ECC449A214BBAD4778C /* WingmanCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6CE7E1DDB41D2956FC6333 /* WingmanCore.framework */; };
 		74C8EA91744768C507D61EDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E55DCE31FC792949D64575A3 /* Assets.xcassets */; };
@@ -42,11 +48,14 @@
 		85ABB51B2B0C327BDF4654A2 /* ReplyAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A85C32A96712A71F5A0A67 /* ReplyAssistant.swift */; };
 		8802AF66E113CF6B06620DC2 /* WingmanCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FB6CE7E1DDB41D2956FC6333 /* WingmanCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8934E9F43B99152F173E0FC0 /* NIMReplyAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1744547DA5E73E9B19EBCB05 /* NIMReplyAssistant.swift */; };
+		8EDD75C105D62EC6575771DC /* ConnectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3E1E32FBA9B17B6191AE3 /* ConnectionsView.swift */; };
 		918969DCBB6D731DDB049D06 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A15FD7D2CDC504BB6947C /* EmptyStateView.swift */; };
 		95834302392818DA87D5127D /* ChipListField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D98A5842BA46E75864E6D3 /* ChipListField.swift */; };
 		962CA1A8BED2E0D62CDE5BF1 /* MessagesRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11EC21305F67F047DCEF0C6 /* MessagesRootView.swift */; };
 		97DB9EAF6B87AE3204414E3F /* WingmanCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6CE7E1DDB41D2956FC6333 /* WingmanCore.framework */; };
 		986DAAAE3F0F839556BC22BE /* CardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A10885587EE250E080FF9D0 /* CardStyle.swift */; };
+		9B62B59154A7155516F25173 /* WingmanSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0668B0AC91972136D8ED2AF /* WingmanSync.swift */; };
+		AEA3013D9D22DF9AEBD2F9DF /* DemoAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D06B4BC37391B1D39CB73ED /* DemoAccounts.swift */; };
 		B3429CF7D30486A012449FBE /* WingmanCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FB6CE7E1DDB41D2956FC6333 /* WingmanCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B549C7E8C28AD05CCEFE4A0E /* MessagePayloadCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BAB49EE6EB5C21FDE214AE /* MessagePayloadCodec.swift */; };
 		C51AB431EAF0B01691A637CF /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CC9ACD54A799243529F5CA /* MessagesViewController.swift */; };
@@ -63,6 +72,7 @@
 		F1E30C1425BD61509688E815 /* ReplyComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6D59858989EA301ADCAC /* ReplyComposer.swift */; };
 		F1E3A652D20E297993F6111A /* NIMClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8763753ABC505EC26C1F2F19 /* NIMClient.swift */; };
 		F280DF1165B633A6E2CF0EF3 /* MeetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D8C5C04E6BB4FC0A50B4B7 /* MeetView.swift */; };
+		F4A3685344C61EC4E5CA570D /* ChatGPTContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8438B0ADE1C2B68760F155B9 /* ChatGPTContext.swift */; };
 		FDC60AACB471C0F310EB6946 /* WingmanTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BF8015BC173B0BC1808A15 /* WingmanTextEditor.swift */; };
 /* End PBXBuildFile section */
 
@@ -138,6 +148,7 @@
 		00BAB49EE6EB5C21FDE214AE /* MessagePayloadCodec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePayloadCodec.swift; sourceTree = "<group>"; };
 		035F6D59858989EA301ADCAC /* ReplyComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyComposer.swift; sourceTree = "<group>"; };
 		09D8C5C04E6BB4FC0A50B4B7 /* MeetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetView.swift; sourceTree = "<group>"; };
+		0D06B4BC37391B1D39CB73ED /* DemoAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAccounts.swift; sourceTree = "<group>"; };
 		163F82C3D556726DF3B85D21 /* PrivacyBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyBadge.swift; sourceTree = "<group>"; };
 		1744547DA5E73E9B19EBCB05 /* NIMReplyAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIMReplyAssistant.swift; sourceTree = "<group>"; };
 		20A85C32A96712A71F5A0A67 /* ReplyAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyAssistant.swift; sourceTree = "<group>"; };
@@ -149,13 +160,19 @@
 		3CE605BCCED5E02B556F8CD6 /* MessagesExtensionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesExtensionModel.swift; sourceTree = "<group>"; };
 		3D01AAC7E9478F0969D5A6AD /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		3DFE5081D5CB94234781ACD3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		3FB3E1E32FBA9B17B6191AE3 /* ConnectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionsView.swift; sourceTree = "<group>"; };
+		4D2E1711E946E864AF169EF4 /* WingmanEditorialStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingmanEditorialStyle.swift; sourceTree = "<group>"; };
 		4F9B593F4C43DAA7816A3908 /* WingmanTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingmanTextField.swift; sourceTree = "<group>"; };
 		56D98A5842BA46E75864E6D3 /* ChipListField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipListField.swift; sourceTree = "<group>"; };
+		5829F9A69BAF404349270CC0 /* WingmanMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingmanMark.swift; sourceTree = "<group>"; };
 		5C0A15FD7D2CDC504BB6947C /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		612072C87746C621A1252456 /* WingmanMeshBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingmanMeshBackground.swift; sourceTree = "<group>"; };
 		638AC147BDB98830CC7EF1BF /* RenderReplyClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderReplyClient.swift; sourceTree = "<group>"; };
+		6D8603B9D84CDDF521A61B39 /* ChatGPTCrawlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTCrawlView.swift; sourceTree = "<group>"; };
 		742D31E95A6239404AE79935 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		74CC9ACD54A799243529F5CA /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		8294444ED8487452DAB210A8 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		8438B0ADE1C2B68760F155B9 /* ChatGPTContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTContext.swift; sourceTree = "<group>"; };
 		86D56B3ACD826D3531CE7556 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		8763753ABC505EC26C1F2F19 /* NIMClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIMClient.swift; sourceTree = "<group>"; };
 		87D994C85C00A252B17D1CAA /* WingmanCoreTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = WingmanCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,13 +187,15 @@
 		BFB03D1602F9A383943E37F9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		C60DA1D3328F3FAEDFE04C65 /* WingmanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingmanApp.swift; sourceTree = "<group>"; };
 		CBDEC73743AFE19C3818C73B /* MatchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchEngine.swift; sourceTree = "<group>"; };
+		CD192B402B6BFD4DBF0FAA28 /* SwipeDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDeck.swift; sourceTree = "<group>"; };
+		D0668B0AC91972136D8ED2AF /* WingmanSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingmanSync.swift; sourceTree = "<group>"; };
 		D8BF8015BC173B0BC1808A15 /* WingmanTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingmanTextEditor.swift; sourceTree = "<group>"; };
 		E55DCE31FC792949D64575A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0C8D94BB6E4E4B24227BE55 /* WingmanButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingmanButtonStyles.swift; sourceTree = "<group>"; };
 		F2FE628C0697A064C96F62AF /* Wingman.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Wingman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F92EEE5C5C92EEF0EFCE98BF /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		FB6CE7E1DDB41D2956FC6333 /* WingmanCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WingmanCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"TEMP_5A0CEC40-8DB2-441F-A27E-DBFE15438499" /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		"TEMP_4B6D7855-324E-4B84-9F67-397083022A27" /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,13 +289,18 @@
 			isa = PBXGroup;
 			children = (
 				86D56B3ACD826D3531CE7556 /* AppModel.swift */,
+				6D8603B9D84CDDF521A61B39 /* ChatGPTCrawlView.swift */,
+				3FB3E1E32FBA9B17B6191AE3 /* ConnectionsView.swift */,
 				3DFE5081D5CB94234781ACD3 /* HomeView.swift */,
 				09D8C5C04E6BB4FC0A50B4B7 /* MeetView.swift */,
 				3737BE6091DB8463D3B09835 /* MemoriesView.swift */,
+				8294444ED8487452DAB210A8 /* OnboardingView.swift */,
 				239D0C6A64E7028542A0CBA7 /* ProfileEditorView.swift */,
 				2F8EEDD69614EF245DAC3D18 /* RootView.swift */,
 				742D31E95A6239404AE79935 /* SettingsView.swift */,
+				CD192B402B6BFD4DBF0FAA28 /* SwipeDeck.swift */,
 				C60DA1D3328F3FAEDFE04C65 /* WingmanApp.swift */,
+				4D2E1711E946E864AF169EF4 /* WingmanEditorialStyle.swift */,
 			);
 			path = WingmanApp;
 			sourceTree = "<group>";
@@ -293,6 +317,8 @@
 		81BD7143ECBC17A3E37E8BEC /* WingmanCore */ = {
 			isa = PBXGroup;
 			children = (
+				8438B0ADE1C2B68760F155B9 /* ChatGPTContext.swift */,
+				0D06B4BC37391B1D39CB73ED /* DemoAccounts.swift */,
 				CBDEC73743AFE19C3818C73B /* MatchEngine.swift */,
 				00BAB49EE6EB5C21FDE214AE /* MessagePayloadCodec.swift */,
 				A47FF96FE52D3F38B915F32D /* Models.swift */,
@@ -302,6 +328,7 @@
 				638AC147BDB98830CC7EF1BF /* RenderReplyClient.swift */,
 				20A85C32A96712A71F5A0A67 /* ReplyAssistant.swift */,
 				B2F6766CEFBACB10B9CB2DF2 /* SharedStateStore.swift */,
+				D0668B0AC91972136D8ED2AF /* WingmanSync.swift */,
 			);
 			path = WingmanCore;
 			sourceTree = "<group>";
@@ -330,6 +357,7 @@
 				163F82C3D556726DF3B85D21 /* PrivacyBadge.swift */,
 				035F6D59858989EA301ADCAC /* ReplyComposer.swift */,
 				BC663ADDD1A8269654C03465 /* ReplySuggestionCard.swift */,
+				5829F9A69BAF404349270CC0 /* WingmanMark.swift */,
 				612072C87746C621A1252456 /* WingmanMeshBackground.swift */,
 				D8BF8015BC173B0BC1808A15 /* WingmanTextEditor.swift */,
 				4F9B593F4C43DAA7816A3908 /* WingmanTextField.swift */,
@@ -367,10 +395,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		"TEMP_36EAA880-A59A-4762-B0AC-5937635094E3" /* wingman */ = {
+		"TEMP_D4FDA15E-2D42-40F6-9BBD-4BAAE4F8B2DD" /* wingman */ = {
 			isa = PBXGroup;
 			children = (
-				"TEMP_5A0CEC40-8DB2-441F-A27E-DBFE15438499" /* Secrets.xcconfig */,
+				"TEMP_4B6D7855-324E-4B84-9F67-397083022A27" /* Secrets.xcconfig */,
 			);
 			path = wingman;
 			sourceTree = "<group>";
@@ -543,19 +571,25 @@
 			files = (
 				3E2466015A52930C3807F329 /* AppModel.swift in Sources */,
 				44432CFBE757DE481D889C13 /* CardStyle.swift in Sources */,
+				01816716444BE5FB8480546F /* ChatGPTCrawlView.swift in Sources */,
 				95834302392818DA87D5127D /* ChipListField.swift in Sources */,
+				8EDD75C105D62EC6575771DC /* ConnectionsView.swift in Sources */,
 				918969DCBB6D731DDB049D06 /* EmptyStateView.swift in Sources */,
 				C65F4D3C22D1C43EFEC5BBB9 /* HomeView.swift in Sources */,
 				F280DF1165B633A6E2CF0EF3 /* MeetView.swift in Sources */,
 				85220144DBCCDD048F800433 /* MemoriesView.swift in Sources */,
+				5F108EE5CB5921BEFE32FD7C /* OnboardingView.swift in Sources */,
 				CAE8BCAB3954AB98AA615FC6 /* PrivacyBadge.swift in Sources */,
 				091F91FD58A471E8FFA03582 /* ProfileEditorView.swift in Sources */,
 				F1E30C1425BD61509688E815 /* ReplyComposer.swift in Sources */,
 				D9C59AF2C22CB9D72F473656 /* ReplySuggestionCard.swift in Sources */,
 				345A53409AB489D528DBEC16 /* RootView.swift in Sources */,
 				381139A3E39E2E93C792F79D /* SettingsView.swift in Sources */,
+				20421058E0281DA23FC5B76E /* SwipeDeck.swift in Sources */,
 				2BE29725AE9D9DE0D46AE073 /* WingmanApp.swift in Sources */,
 				04523851CC1DC3F7ADF139C2 /* WingmanButtonStyles.swift in Sources */,
+				66741D9F67847208D409D7B6 /* WingmanEditorialStyle.swift in Sources */,
+				65257B14ED0AA1617A867A6E /* WingmanMark.swift in Sources */,
 				5F1E1A7E6943151133C51FD7 /* WingmanMeshBackground.swift in Sources */,
 				515B8D8202571BBD22320059 /* WingmanMetrics.swift in Sources */,
 				C5FB44EEFF5A3543304F2432 /* WingmanPalette.swift in Sources */,
@@ -569,6 +603,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4A3685344C61EC4E5CA570D /* ChatGPTContext.swift in Sources */,
+				AEA3013D9D22DF9AEBD2F9DF /* DemoAccounts.swift in Sources */,
 				483E12C1A64ADA7A33A4577A /* MatchEngine.swift in Sources */,
 				B549C7E8C28AD05CCEFE4A0E /* MessagePayloadCodec.swift in Sources */,
 				78D600AF922509FE00BA42C1 /* Models.swift in Sources */,
@@ -578,6 +614,7 @@
 				0E198F48B23772F539DFE10D /* RenderReplyClient.swift in Sources */,
 				85ABB51B2B0C327BDF4654A2 /* ReplyAssistant.swift in Sources */,
 				CD9532E228267F8AEE805E3E /* SharedStateStore.swift in Sources */,
+				9B62B59154A7155516F25173 /* WingmanSync.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +632,7 @@
 				53D84CD963274E616BD0902E /* ReplyComposer.swift in Sources */,
 				2D95E59542F9F2B1C94C4EBD /* ReplySuggestionCard.swift in Sources */,
 				4119F0011BCCF1E25600B5F9 /* WingmanButtonStyles.swift in Sources */,
+				205470FD3257AD1DBF44122D /* WingmanMark.swift in Sources */,
 				690ECA091BAD21788746FABC /* WingmanMeshBackground.swift in Sources */,
 				CE2E8A093DA5F184860112F8 /* WingmanMetrics.swift in Sources */,
 				CD0FFC1DBF9E73BB1957F58D /* WingmanPalette.swift in Sources */,
@@ -756,7 +794,7 @@
 		};
 		9D6513D9C82CCE7BD3D4DAB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = "TEMP_5A0CEC40-8DB2-441F-A27E-DBFE15438499" /* Secrets.xcconfig */;
+			baseConfigurationReference = "TEMP_4B6D7855-324E-4B84-9F67-397083022A27" /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -859,7 +897,7 @@
 		};
 		DABFDCF87C106D2CAF6C5A18 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = "TEMP_5A0CEC40-8DB2-441F-A27E-DBFE15438499" /* Secrets.xcconfig */;
+			baseConfigurationReference = "TEMP_4B6D7855-324E-4B84-9F67-397083022A27" /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

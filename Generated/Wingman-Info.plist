@@ -33,6 +33,13 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.social-networking</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+	</dict>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Wingman connects to the profile-sync gateway on your Mac during a private development test.</string>
 	<key>NVIDIA_API_KEY</key>
 	<string>$(NVIDIA_API_KEY)</string>
 	<key>RENDER_WORKFLOW_URL</key>
@@ -50,5 +57,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>WINGMAN_GATEWAY_TOKEN</key>
+	<string>$(WINGMAN_GATEWAY_TOKEN)</string>
+	<key>WINGMAN_SYNC_BASE_URL</key>
+	<string>$(WINGMAN_SYNC_BASE_URL)</string>
 </dict>
 </plist>
